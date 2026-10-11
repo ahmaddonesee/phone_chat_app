@@ -1,0 +1,8 @@
+
+django
+
+# for django channel
+channels[daphne]
+
+# for channel types
+channels[types]

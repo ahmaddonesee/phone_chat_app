@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Chat</h1>
+
+    <form id="room-form">
+
+        <input
+            type="text"
+            id="room-name"
+            placeholder="Enter room name"
+            required
+        >
+
+        <button type="submit">
+            Enter Room
+        </button>
+
+    </form>
+
+    <script>
+        const form = document.getElementById("room-form");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const roomName =
+                document.getElementById("room-name").value;
+
+            window.location.href =
+                "/chat/" + roomName + "/";
+        });
+    </script>
+
+</body>
+</html>
