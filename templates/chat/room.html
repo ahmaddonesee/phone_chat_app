@@ -44,6 +44,8 @@
         chatSocket.send(
           JSON.stringify({
             message: message,
+            // send datat to server to make model
+            "command":"new_message",
           }),
         );
         messageInputDom.value = "";

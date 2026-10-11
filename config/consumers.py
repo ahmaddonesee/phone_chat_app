@@ -10,7 +10,7 @@ class ChatConsumer(WebsocketConsumer):
     
     #this functon make model for message from client to selver 
     def new_message(self,data):
-        pass
+        print("yes")
     #show perivious message
     def feach_message(self):
         pass
@@ -46,6 +46,12 @@ class ChatConsumer(WebsocketConsumer):
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json["message"]
+        # give data from command and what to do 
+        command = text_data_json["command"]
+        
+        
+        # make function for command
+        self.commands[command](self,message)
 
         # Send message to room group
         async_to_sync(self.channel_layer.group_send)(
